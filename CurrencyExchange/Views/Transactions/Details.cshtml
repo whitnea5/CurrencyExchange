@@ -1,0 +1,47 @@
+﻿@model CurrencyExchange.Models.Transaction
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Transaction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Source_Currency)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Source_Currency)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination_Currency)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Destination_Currency)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Source_Amount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Source_Amount)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination_Amount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Destination_Amount)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FX_Rate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FX_Rate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

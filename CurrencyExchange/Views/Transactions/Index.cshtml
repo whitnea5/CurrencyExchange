@@ -1,0 +1,60 @@
+﻿@model IEnumerable<CurrencyExchange.Models.Transaction>
+
+@{
+    ViewData["Title"] = "Index";
+}
+</br>
+<h3>Submit file here:</h3>
+<form method="post" asp-action="FileUpload" asp-controller="Transactions" enctype="multipart/form-data">
+    <input type="file" name="files" multiple />
+    <input type="submit" value="Upload" />
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Source Currency
+            </th>
+            <th>
+                Destination Currency
+            </th>
+            <th>
+                Source Amount
+            </th>
+            <th>
+                Destination Amount
+            </th>
+            <th>
+                Exchange Rate
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Source_Currency)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Destination_Currency)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Source_Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Destination_Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FX_Rate)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
